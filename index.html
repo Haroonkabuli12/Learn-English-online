@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn English Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ 
+    <header>
+        <h1>Learn English Online</h1>
+        <nav>
+            <ul>
+                <li><a href="#courses" class="cta-button">Courses</a></li>
+                <li><a href="#resources" class="cta-button">Resources</a></li>
+                <li><a href="#contact"class="cta-button">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="courses">
+            <h2>Courses</h2>
+            <div class="course-list" id="course-list">
+                <!-- Courses will be dynamically inserted here -->
+            </div>
+        </section>
+        <section id="resources">
+            <h2>Resources</h2>
+            <ul>
+                <li><a href="https://learnenglish.britishcouncil.org/grammar">Grammar Guide</a></li>
+                <li><a href="https://www.brainscape.com/learn/vocab-builder">Vocabulary Builder</a></li>
+                <li><a href="https://elt.oup.com/student/practicegrammar/int/a_testzone/?cc=us&selLanguage=en">Practice Exercises</a></li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Learn English Online</p>
+    </footer>
+    <style>
+    
+       
+body {
+    font-family: Arial, serif;
+    margin: 0;
+    padding: 0;
+    background-color: #584e4e;
+}
+.cta-button{
+    background: hsl(300, 9%, 98%);
+    color: #080000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+
+
+}
+.h1{
+    text-shadow: #e10c0c
+    #ffff 0 0 12px
+    #00c3ce 0 0 25px
+    #00c3ce 0 0 25px
+    #00c3ce 0 0 25px;
+}
+header {
+    background-color: #63cfea;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+section {
+    margin: 20px 0;
+    padding: 20px;
+    background: rgb(115, 184, 228);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+}
+
+.course-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.course {
+    padding: 15px;
+    margin: 10px 0;
+    background: #e9ecef;
+    border-radius: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+   position:relative;
+   height: 40px; width: 100px;
+   border-radius: 20px;
+   border: 1px solid blueviolet; 
+   color: #130f49; 
+   background: linear-gradient(to right, #f368e0, #48dbfb);
+   animation: wiggle 2s linear infinite;
+}
+
+button:hover {
+    background-color: #1b2b3d;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #48df12;
+    color: white;
+}
+
+
+
+    </style>
+    <script src="script.js"></script>
+    <script>
+const courses = [
+    {
+        title: "Grammar",
+        description: "Grammar is the structural foundation of our abiity to express ourselves. The more we are aware of how it works, the more we can monitor the meaning and effectiveness of the way we and others use language. It can help foster precision, detect ambiguity, and exploit the richness of expression available in English."
+    },
+    {
+        title: "Grammatical Phrases",
+        description: "Grammatical phrases add meaning to sentences by giving detail about one or more of the parts of speech in use. A grammatical phrase can clarify any part of speech—the key here is that all a phrase does is provide some detail; it doesn't have the structure to be a clause of its own.."
+    },
+    {
+        title: "Verbs",
+        description: "As the heart of sentences and clauses, verbs show what the subject is doing or feeling, even if they're just existing. Verbs are also the only type of word that's absolutely necessary to make a sentence.."
+    }
+];
+
+const courseList = document.getElementById('course-list');
+
+courses.forEach(course => {
+    const courseDiv = document.createElement('div');
+    courseDiv.classList.add('course');
+    courseDiv.innerHTML = `<h3>${course.title}</h3><p>${course.description}</p>`;
+    courseList.appendChild(courseDiv);
+});
+
+// Contact form submission
+const contactForm = document.getElementById('contact-form');
+
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Thank you for your message! We will get back to you soon.');
+    contactForm.reset();
+});
+
+
+    </script>
+</body>
+</html>
